@@ -1,8 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
-import pymongo
 import re
 
 
@@ -22,9 +21,12 @@ mongo = PyMongo(app)
 #     wine = conn[app.config["MONGO_DBNAME"]][app.config["COLLECTION_NAME"]].find()
 #     return render_template('index.html', wine = wine)
 
+# def index():
+#     return render_template("index.html", 
+#                           index=mongo.db.wine.find())
+
 def index():
-    return render_template("index.html", 
-                          index=mongo.db.wine.find())
+    return render_template("index.html", title="index")
 
 
 
