@@ -7,9 +7,13 @@ import re
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'Project_3'
-app.config["COLLECTION_NAME"] = 'wine'
+# app.config["COLLECTION_NAME"] = 'wine'
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 conn = pymongo.MongoClient(os.getenv("MONGO_URI"))
+DATABASE_NAME = 'Project_3'
+COLLECTION_NAME = 'wine'
+COLLECTION_NAME2 = 'country'
+COLLECTION_NAME3 = 'review'
 
 # Initilize Pymongo
 mongo = PyMongo(app)
@@ -30,7 +34,13 @@ def index():
 
 @app.route('/add_wine')
 def add_wine():
-    return render_template("add.html", title="index")
+    return render_template("add.html", title="add_wine")
+    
+@app.route('/search')
+def search():
+    wine = conn[DATABASE_NAME][COLLECTION_NAME].find()
+    return render_template("search.html", title="search", wine=wine)
+
 
 
 
