@@ -32,6 +32,7 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", title="index")
 
+# Add Wine Section
 @app.route('/add_wine')
 def add_wine():
     return render_template("add.html", title="add_wine")

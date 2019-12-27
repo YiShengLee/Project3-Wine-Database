@@ -1,9 +1,47 @@
 {% extends 'base.html'%} {% block content %}
 
-{% for each_wine in wine %}
-{{each_wine.price}}
-{% endfor %}
 
+<div class="container">
+  <div class="row">
+    {% for each_wine in wine %}
+    <!-- Team Member 1 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">Price: {{each_wine.price}}{{ loop.index }}</h5>
+          <div class="card-text text-black-5">Country: {{each_wine.points}}</div>
+          <div class="card-text text-black-50">Country: {{each_wine.country}}</div>
+          
+          <!--<div class="card-text text-black-50">Review: {{each_wine.Description}}</div>-->
+          
+          <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{loop.index}}">
+          Click here for more description
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapse{{loop.index}}" class="collapse" data-parent="#accordion">
+      <div class="card-body">
+        {{each_wine.Description}}
+      </div>
+    </div>
+  </div>
+  </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
 
 
 
