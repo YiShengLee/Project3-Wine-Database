@@ -1,20 +1,20 @@
 {% extends 'base.html'%} {% block content %}
 <h1>It Works</h1>
 
-<form class="form">
+<form class="form" method="POST">
     <span class="nametxt">Name:</span><br>
-    <input type="text" class="name" placeholder="Insert Your Name"><br><br>
+    <input type="text" class="name" name="name" placeholder="Insert Your Name"><br><br>
     
     <span>Points:</span><br>
-    <input type="text" class="points"><br><br>
+    <input type="text" class="points" name="points"><br><br>
     
     <span>Variety:</span><br>
-    <input type="text" class="variety"><br><br>
+    <input type="text" class="variety" name="variety"><br><br>
     
     <span>Title:</span><br>
-    <input type="text" class="title"><br><br>
+    <input type="text" class="title" name="title"><br><br>
     
-    <input type="submit" class="button">
+    <input type="submit" class="button" >
     
 </form>
 {% endblock content %}
