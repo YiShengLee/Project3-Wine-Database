@@ -9,9 +9,11 @@
     <!--Bootstrap Css-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--CSS Link-->
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2344b1213a.js" crossorigin="anonymous"></script>
     <title>Wine Database</title>
 </head>
 <body>
@@ -20,6 +22,12 @@
     .logo{
       height:70px;
       /*padding-right:10px;*/
+    }
+    .navbar{
+      height: 7vh;
+    }
+    .footer{
+      height: 3vh;
     }
     /*navbar text*/
     .navword{
@@ -33,6 +41,19 @@
       background-color: #f4623a;
       border-color: #f4623a;
     }
+  .btn-xl {
+    padding: 1.25rem 2.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10rem;
+  }
+  .btn-primary {
+    color: #fff;
+    background-color: #f4623a;
+    border-color: #f4623a;
+  }
   </style>
   
   <!--Navbar Section-->
@@ -70,8 +91,8 @@
     
     
     <!--footer-->
-    <footer class="text-center bg-dark p-2">
-        <span class="footer text-white">&copy Red Wine Database 2019 | Lee Yi Sheng</span>
+    <footer class="text-center bg-dark p-2 footer">
+        <span class="text-white">&copy Red Wine Database 2019 | Lee Yi Sheng</span>
     </footer>
     
     
