@@ -12,8 +12,7 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 conn = pymongo.MongoClient(os.getenv("MONGO_URI"))
 DATABASE_NAME = 'Project_3'
 COLLECTION_NAME = 'wine'
-COLLECTION_NAME2 = 'country'
-COLLECTION_NAME3 = 'review'
+COLLECTION_NAME2 = 'review'
 
 # Initilize Pymongo
 mongo = PyMongo(app)
@@ -39,19 +38,38 @@ def add_wine():
 
 @app.route('/add_wine', methods=['POST']) #To add the new wine information to mongodb database
 def insert_wine():
-    name = request.form.get('name')
-    points = request.form.get('points')
-    variety = request.form.get('variety')
-    title = request.form.get('title')
+    price = request.form.get('price')
+    country = request.form.get('country')
+    province = request.form.get('province')
+    description = request.form.get('description')
+    winetype = request.form.get('winetype')
+    label = request.form.get('label')
     
-    conn[DATABASE_NAME][COLLECTION_NAME3].insert({
-        "name" : name,
-        "points" : points,
-        "variety" : variety,
-        "title" : title
+    
+    firstname = request.form.get('firstname')
+    lastname = request.form.get('lastname')
+    # points = request.form.get('points')
+    label = request.form.get('label')
+    
+    conn[DATABASE_NAME][COLLECTION_NAME].insert({
+        "price" : price,
+        "country" : country,
+        "province" : province,
+        "description" : description,
+        "winetype" : winetype,
+        "label" : label
     })
     
-    print(name,points,variety,title)
+    conn[DATABASE_NAME][COLLECTION_NAME2].insert({
+        "firstname" : firstname,
+        "lastname" : lastname,
+        # "points" : points,
+        "label" : label
+    })
+    
+
+    
+    # print(name,points,variety,title)
     # flash("You have added a new wine.")
     return redirect("/")
     
