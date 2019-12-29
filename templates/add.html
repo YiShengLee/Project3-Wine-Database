@@ -1,87 +1,118 @@
 {% extends 'base.html'%} {% block content %}
 <style>
-  .type{
-    max-width:100%;
-    height: auto;
-  }
-  .c2{
-    /*max-width:85vw;*/
-    background-image: url(../static/img/vineyard1.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size:cover;
-    padding: 80px;
-    border-radius:2rem;
-    margin-bottom: 50px;
-    box-shadow: 10px 10px 5px #aaaaaa;
-    /*height:100%;*/
-  }
-  
-  /*Registration Text*/
-  .formheader{
-    font-family: 'Permanent Marker', cursive;
-    font-size: 40px
-  }
-  .input-group{
-    padding:0px;
-  }
-  
-  .form-control{
-      width:100%;
-      height:50px;
-  }
-  .control-label{
-      font-family: 'DM Serif Text', serif;
-      font-size: 30px;
-      font-weight: bold;
-  }
-  
-/*For mobile*/
-  @media only screen and (max-width: 767px) {
-    .c2{
-        padding:20px;
-        max-width:85vw;
+    .type {
+        max-width: 100%;
+        height: auto;
     }
-    .grape{
-        width:30px;
+    
+    .c2 {
+        /*max-width:85vw;*/
+        background-image: url(../static/img/vineyard1.png);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        padding: 80px;
+        border-radius: 2rem;
+        margin-bottom: 50px;
+        box-shadow: 10px 10px 5px #aaaaaa;
+        /*height:100%;*/
     }
-    .formheader, .control-label{
-        font-size:20px;
+    /*Registration Text*/
+    
+    .formheader {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 40px
     }
-    .form-control{
-        height:35px;
+    
+    .input-group {
+        padding: 0px;
     }
-  }
-  
-  /*.c1{*/
-  /*  background-image: url(../static/img/wineVector.jpg);*/
-  /*  z-index: 1;*/
-  /*}*/
-  
-  /*.body{*/
-  /*  background-image: url(../static/img/wineVector.jpg);*/
-  /*}*/
+    
+    .form-control {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .control-label {
+        font-family: 'DM Serif Text', serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    /*For mobile*/
+    
+    @media only screen and (max-width: 767px) {
+        .c2 {
+            padding: 20px;
+            max-width: 85vw;
+        }
+        .grape {
+            width: 30px;
+        }
+        .formheader,
+        .control-label {
+            font-size: 20px;
+        }
+        .form-control {
+            height: 35px;
+        }
+    }
+    
+    /*Back Button Section*/
+    .bk-btn {
+      height: 52px;
+      width: 52px;
+      background-color: black;
+      border-radius: 30%;
+    }
+    .bk-btn:hover {
+        background-color: rgb(0,121,251);
+    }
+    .bk-btn .bk-btn-triangle {
+      position: relative;
+      top: 13px;
+      left: 10.4px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-right: 13px solid white;
+    }
+    .bk-btn .bk-btn-bar {
+      position: relative;
+      background-color: white;
+      height: 7.8px;
+      width: 13px;
+      top: -3.64px;
+      left: 22.88px;
+    }
+    /*End of Back Button Section*/
 
+    /*.c1{*/
+    /*  background-image: url(../static/img/wineVector.jpg);*/
+    /*  z-index: 1;*/
+    /*}*/
+    /*.body{*/
+    /*  background-image: url(../static/img/wineVector.jpg);*/
+    /*}*/
 </style>
-
 
 <!--<form class="form" method="POST">-->
 <!--    <span class="nametxt">Name:</span><br>-->
 <!--    <input type="text" class="name" name="name" placeholder="Insert Your Name"><br><br>-->
-    
+
 <!--    <span>Points:</span><br>-->
 <!--    <input type="text" class="points" name="points"><br><br>-->
-    
+
 <!--    <span>Variety:</span><br>-->
 <!--    <input type="text" class="variety" name="variety"><br><br>-->
-    
+
 <!--    <span>Title:</span><br>-->
 <!--    <input type="text" class="title" name="title"><br><br>-->
-    
-<!--    <input type="submit" class="button btn-xl btn-primary" >-->
-    
-<!--</form>-->
 
+<!--    <input type="submit" class="button btn-xl btn-primary" >-->
+
+<!--</form>-->
 
 <!--<div class="container-fluid c1">-->
 <legend>
@@ -93,7 +124,13 @@
     <form class="form-horizontal" method="post" id="contact_form">
 
         <!--Form Section-->
-
+        <a href="{{url_for('index')}}">
+            <div class="bk-btn">
+                <div class="bk-btn-triangle"></div>
+                <div class="bk-btn-bar"></div>
+            </div>
+        </a><br>
+        
         <!--First Name Input-->
         <div class="form-group mb-3">
             <div class="control-label">First Name:</div>
@@ -441,16 +478,15 @@
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4">
                 <br>
-                <button type="submit" class="button btn-xl btn-primary">Submit<span class="glyphicon glyphicon-send"></span></button>
+                <button type="submit" class="button btn-xl btn-success">Submit<span class="glyphicon glyphicon-send"></span></button>
             </div>
         </div>
 
     </form>
 
 </div>
-  
-    
+
 <!--<img class="type" src="../static/img/WineType.png"  alt="logo">-->
 <!--Need to move it to the right side of the form and click it to display as a pop up.-->
-    
+
 {% endblock content %}

@@ -71,7 +71,7 @@ def insert_wine():
     
     # print(name,points,variety,title)
     # flash("You have added a new wine.")
-    return redirect("/")
+    return redirect("/add_wine")
     
 # Add Search Section
 @app.route('/search')
