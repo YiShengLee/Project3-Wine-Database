@@ -38,6 +38,7 @@
     -1px 1px 0 #000,
     1px 1px 0 #000; 
   }
+  
 </style>
 
 <section class="home">
@@ -50,7 +51,19 @@
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white font-weight-light mb-5">Get started by clicking the button below to add your own wine preferance. If not click one SEARCH to view your preferance type of red wine.</p>
-          <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('add_wine')}}">Get started</a>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-xl-5 center m-3">
+                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('search')}}">Get Started</a>
+              </div>
+              <div class="col-md-12 col-xl-5 center m-3">
+                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('add_wine')}}">Add Your Wine</a>
+              </div>
+              
+            </div>
+          </div>
+          
+          
         </div>
       </div>
     </div>
