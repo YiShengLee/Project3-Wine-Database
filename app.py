@@ -36,11 +36,11 @@ def index():
 def add_wine():
     return render_template("add.html", title="add_wine")
 
-@app.route('/add_wine', methods=['POST']) #To add the new wine information to mongodb database
-def insert_wine():
+@app.route('/post_wine', methods=['POST']) #To add the new wine information to mongodb database
+def post_wine():
     price = request.form.get('price')
     country = request.form.get('country')
-    province = request.form.get('province')
+    winery = request.form.get('winery')
     description = request.form.get('description')
     winetype = request.form.get('winetype')
     label = request.form.get('label')
@@ -54,30 +54,31 @@ def insert_wine():
     conn[DATABASE_NAME][COLLECTION_NAME].insert({
         "price" : price,
         "country" : country,
-        "province" : province,
+        "winery" : winery.capitalize(),
         "description" : description,
         "winetype" : winetype,
-        "label" : label
+        "label" : label,
+        "firstname" : firstname.capitalize(),
+        "lastname" : lastname.capitalize()
     })
     
     conn[DATABASE_NAME][COLLECTION_NAME2].insert({
-        "firstname" : firstname,
-        "lastname" : lastname,
+        "firstname" : firstname.capitalize(),
+        "lastname" : lastname.capitalize(),
         # "points" : points,
         "label" : label
     })
     
-
-    
     # print(name,points,variety,title)
-    # flash("You have added a new wine.")
-    return redirect("/add_wine")
+    # flash('The wine has successfully been updated!', 'success')
+    return redirect(url_for('add_wine'))
     
 # Add Search Section
 @app.route('/search')
 def search():
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find()
-    return render_template("search.html", title="search", wine=wine)
+    review = conn[DATABASE_NAME][COLLECTION_NAME2].find()
+    return render_template("search.html", title="search", wine=wine,review=review)
 
 
 

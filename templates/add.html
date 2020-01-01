@@ -121,7 +121,7 @@
 
 <div class="container c2">
 
-    <form class="form-horizontal" method="post" id="contact_form">
+    <form class="form-horizontal" method="post" id="contact_form" action="{{url_for('post_wine')}}">
 
         <!--Form Section-->
         <a href="{{url_for('index')}}">
@@ -419,14 +419,14 @@
             </div>
         </div>
 
-        <!--Province Input-->
+        <!--Winery Input-->
         <div class="form-group mb-3">
-            <div class="control-label">Province:</div>
+            <div class="control-label">Winery:</div>
             <div class="input-group ">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-flag"></i></span>
+                    <span class="input-group-text"><i class="fas fa-store-alt"></i></span>
                 </div>
-                <input name="province" placeholder="Country Province" class="form-control" type="text">
+                <input name="winery" placeholder="Wine Produced Name" class="form-control" type="text">
             </div>
         </div>
 
@@ -448,7 +448,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-money-bill-alt"></i></span>
                 </div>
-                <input name="price" placeholder="Cost of Wine" class="form-control" type="text">
+                <input name="price" placeholder="&dollar; Cost of Wine" class="form-control" type="text">
             </div>
         </div>
 
@@ -491,7 +491,7 @@
 
 
 <!--$("#submit").click(function() {-->
-<!--  swal("Congrats!!!", "Your wine data had been added", "success")-->
+<!--  swal("SCongrats!!!", "Your wine data had been added", "success")-->
 <!--});-->
 
 
