@@ -57,9 +57,9 @@ def post_wine():
         "winery" : winery.capitalize(),
         "description" : description,
         "winetype" : winetype,
-        "label" : label,
-        "firstname" : firstname.capitalize(),
-        "lastname" : lastname.capitalize()
+        "label" : label
+        # "firstname" : firstname.capitalize(),
+        # "lastname" : lastname.capitalize()
     })
     
     conn[DATABASE_NAME][COLLECTION_NAME2].insert({
