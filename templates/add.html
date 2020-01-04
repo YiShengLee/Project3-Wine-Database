@@ -121,7 +121,7 @@
 
 <div class="container c2">
 
-    <form class="form-horizontal" method="post" id="contact_form" action="{{url_for('post_wine')}}">
+    <form class="form-horizontal" method="POST" id="contact_form" action="{{url_for('post_wine')}}">
 
         <!--Form Section-->
         <a href="{{url_for('index')}}">
@@ -162,12 +162,9 @@
                 </div>
                 <select name="winetype" class="form-control selectpicker">
                     <option value="">Select your type of wine</option>
-                    <option>Red Wine</option>
-                    <option>White Wine</option>
-                    <option>Rose Wine</option>
-                    <option>Fortified Wine</option>
-                    <option>Sparking Wine</option>
-                    <option>Others</option>
+                   {% for type in winetype %}
+                    <option value={{type.winetype}}>{{type.winetype}}</option>
+                   {% endfor%}
                 </select>
             </div>
         </div>
@@ -469,7 +466,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-keyboard"></i></span>
                 </div>
-                <input name="description" placeholder="Descripe Your Wine Experience" class="form-control" type="text">
+                <input name="description" placeholder="Describe Your Wine Experience" class="form-control" type="text">
             </div>
         </div>
 
@@ -478,7 +475,7 @@
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4">
                 <br>
-                <button id="submit" type="submit" class="button btn-xl btn-success">Submit<span class="glyphicon glyphicon-send"></span></button>
+                <button type="submit" class="button btn-xl btn-success">Submit<span class="glyphicon glyphicon-send"></span></button>
             </div>
         </div>
 

@@ -15,6 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text|Lobster|Permanent+Marker&display=swap" rel="stylesheet">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/2344b1213a.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+
+    
     <title>Wine Database</title>
 </head>
 <body>
@@ -99,7 +103,17 @@
         </ul>
     </div>
 </nav>
-  
+
+<!--Flask Section-->
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success">
+         {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
     
     
     {% block content %}{% endblock content%}
@@ -124,5 +138,8 @@
     
     <!--Jquery Script-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

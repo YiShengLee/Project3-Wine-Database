@@ -5,8 +5,45 @@
   }
 </style>
 
+<a href="{{ url_for('search') }}">Clear Search</a>
 
+<div class="container" id="search">
+    <h2>Search for your desired Wine</h2>
+    <div class="row">
+        <!--Filter profiles by different categories below-->
+        <!--Dropdown for type -->
+        <div class="col-4 dropdown" id="tabs">
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{type}}</button>
+            <div class="dropdown-menu">
+                {% for type in winetype %}
+                <a href="?type={{type.winetype}}" class="dropdown-item">{{type.winetype}}</a> 
+                {% endfor %}
+            </div>
+        </div>
+        <!--Dropdown for purpose -->
+<!--        <div class="col-4 dropdown" id="tabs">-->
+<!--            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{cost}}</button>-->
+<!--            <div class="dropdown-menu">-->
+<!--                {% for cost in wine %}-->
+<!--                <a href="?cost={{cost.price}}">{{cost.price}}</a> -->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        </div>-->
+        <!--Dropdown for brand -->
+<!--        <div class="col-4 dropdown" id="tabs">-->
+<!--            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{brand}}</button>-->
+<!--            <div class="dropdown-menu">-->
+<!--                {% for brand in wine %}-->
+<!--                <a href="?brand={{brand.country}}">{{brand.country}}</a> -->
+<!--                {% endfor %}-->
+<!--            </div>-->
+<!--        </div>-->
 
+    </div>
+</div>
+    
+
+<!--Display Wine-->
 <div class="container">
     <div class="row">
         {% for each_wine in wine %}

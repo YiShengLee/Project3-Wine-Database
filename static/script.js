@@ -1,7 +1,9 @@
-$('#submit').submit(function (e){
-   e.preventDefault(); 
-   ('#contact_form').bootstrapValidator({
-    first_name: {
+
+$(document).ready(function(){
+   $('#contact_form').bootstrapValidator({
+       live:"submitted",
+    fields:{
+    firstname: {
             validators: {
                     stringLength: {
                     min: 2,
@@ -11,7 +13,7 @@ $('#submit').submit(function (e){
                 }
             }
         },
-         last_name: {
+         lastname: {
             validators: {
                  stringLength: {
                     min: 2,
@@ -22,7 +24,7 @@ $('#submit').submit(function (e){
             }
         },
     
-    });
+    }});
 });
 
 
