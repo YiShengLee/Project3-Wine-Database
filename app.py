@@ -80,22 +80,22 @@ def search():
     else:
         type = 'Type'
         
-    if cost and cost != 'Cost':
-        criteria['cost'] = cost
-    else:
-        cost ='Cost'
+    # if cost and cost != 'Cost':
+    #     criteria['cost'] = cost
+    # else:
+    #     cost ='Cost'
         
-    if brand and brand != 'Brand':
-        criteria['brand'] = brand
-    else:
-        brand = 'Brand'
+    # if brand and brand != 'Brand':
+    #     criteria['brand'] = brand
+    # else:
+    #     brand = 'Brand'
     
     # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
-    # print(criteria)
-    types = conn[DATABASE_NAME][COLLECTION_NAME2].find(criteria)
-    wine = conn[DATABASE_NAME][COLLECTION_NAME].find()
+    print(criteria)
+    winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
+    wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
     # print(list(wine))
-    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,brand=brand,types=types)
+    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,brand=brand,winetype=winetype)
 
 
 
