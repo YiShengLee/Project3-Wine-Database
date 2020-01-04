@@ -13,6 +13,8 @@ conn = pymongo.MongoClient(os.getenv("MONGO_URI"))
 DATABASE_NAME = 'Project_3'
 COLLECTION_NAME = 'wine'
 COLLECTION_NAME2 = 'winetype'
+COLLECTION_NAME3 = 'country'
+COLLECTION_NAME4 = 'price'
 
 app.secret_key = "secret"
 
@@ -72,30 +74,33 @@ def search():
     # print(request.args)
     type = request.args.get('type')
     cost = request.args.get('cost')
-    brand = request.args.get('brand')
+    country = request.args.get('country')
     criteria= {} 
     
     if type and type != 'Type':
         criteria['winetype'] = type
     else:
-        type = 'Type'
+        type = 'Wine Type'
         
-    # if cost and cost != 'Cost':
-    #     criteria['cost'] = cost
-    # else:
-    #     cost ='Cost'
+    if cost and cost != 'Cost':
+        criteria['price'] = cost
+    else:
+        cost ='Wine Price'
         
-    # if brand and brand != 'Brand':
-    #     criteria['brand'] = brand
-    # else:
-    #     brand = 'Brand'
+    if country and country != 'Country':
+        criteria['country'] = country
+    else:
+        country = 'Country'
     
     # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
     print(criteria)
-    winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
+    winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
+    countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
+    price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
+    
     # print(list(wine))
-    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,brand=brand,winetype=winetype)
+    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price)
 
 
 

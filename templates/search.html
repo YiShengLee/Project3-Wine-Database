@@ -3,6 +3,11 @@
   .fas{
     font-size:30px;
   }
+  .scrollable-menu{
+      height: auto;
+      max-height: 200px;
+      overflow-x: hidden;
+  }
 </style>
 
 <a href="{{ url_for('search') }}">Clear Search</a>
@@ -20,24 +25,35 @@
                 {% endfor %}
             </div>
         </div>
-        <!--Dropdown for purpose -->
-<!--        <div class="col-4 dropdown" id="tabs">-->
-<!--            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{cost}}</button>-->
-<!--            <div class="dropdown-menu">-->
-<!--                {% for cost in winetype %}-->
-<!--                <a href="?cost={{cost.price}}">{{cost.price}}</a> -->
-<!--                {% endfor %}-->
-<!--            </div>-->
-<!--        </div>-->
-        <!--Dropdown for brand -->
-        <!--<div class="col-4 dropdown" id="tabs">-->
-        <!--    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{brand}}</button>-->
-        <!--    <div class="dropdown-menu">-->
-        <!--        {% for brand in winetype %}-->
-        <!--        <a href="?brand={{brand.country}}">{{brand.country}}</a> -->
-        <!--        {% endfor %}-->
-        <!--    </div>-->
-        <!--</div>-->
+        
+        <!--Dropdown for cost -->
+        <div class="col-4 dropdown" id="tabs">
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{cost}}</button>
+            <div class="dropdown-menu">
+                {% for cost in price %}
+                <a href="?cost={{cost.price}}" class="dropdown-item">{{cost.price}}</a> 
+                {% endfor %}
+            </div>
+        </div>
+
+        <!--Dropdown for Country -->
+        <div class="col-4 dropdown" id="tabs">
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{country}}</button>
+            <div class="dropdown-menu scrollable-menu">
+                
+                <!--<form class="px-4 py-2">-->
+                <!--<input type="search" class="form-control" id="searchCountry" placeholder="Country" autofocus="autofocus">-->
+                <!--</form>-->
+                <!--<div id="menuItems"></div>-->
+                <!--<div id="empty" class="dropdown-header">No country found</div>-->
+                
+                {% for brand in countries %}
+                <li>
+                    <a href="?country={{brand.country}}" class="dropdown-item" scrollable-menu>{{brand.country}}</a>
+                </li>
+                {% endfor %}
+            </div>
+        </div>
 
     </div>
 </div>
