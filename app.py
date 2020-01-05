@@ -99,10 +99,23 @@ def search():
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
     
-    # print(list(wine))
+    
     return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price)
 
+# Add Wine Detail Section
+@app.route('/wine_detail/<wine_id>')
+def wine_detail(wine_id):
+    wines = conn[DATABASE_NAME][COLLECTION_NAME].find_one({
+        "_id": ObjectId(wine_id)
+    })
+    
+    return render_template("wine_detail.html",wines=wines)
+    
 
+
+    
+
+    
 
 
 

@@ -1,0 +1,40 @@
+{% extends 'base.html'%} {% block content %}
+
+<p>Success</p>
+
+<div class="container">
+    
+</div>
+
+<!--Button Section-->
+<div class="buttons text-center pb-2">
+    <a href="" data-toggle="tooltip" title="Edit wine information">
+        <button id="edit" class="btn btn-primary m-2 p-1"><img src="https://img.icons8.com/dusk/64/000000/edit.png" class="icon8"> Edit
+        </button>
+    </a>
+    <a data-toggle="modal" data-target=".bd-4-modal-md" title="Delete wine information">
+        <button id="delete" class="btn btn-danger m-2 p-1"><img src="https://img.icons8.com/plasticine/64/000000/delete-forever.png" class="icon8"> Delete
+        </button>
+    </a>
+</div>
+<div class="modal fade bd-4-modal-md" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                Are you sure you want to delete
+                <button type="button" id="closex" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <a class="btn btn-warning" href="">NO</a>
+                <a class='btn btn-danger' a href="">YES</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
