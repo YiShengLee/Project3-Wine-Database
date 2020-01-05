@@ -111,6 +111,22 @@ def wine_detail(wine_id):
     
     return render_template("wine_detail.html",wines=wines)
     
+    
+# Edit Wine Information Section
+@app.route('/edit_wine/<wines_id>')
+def edit_wine(wines_id):
+    winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
+    countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
+    price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
+    wine = conn[DATABASE_NAME][COLLECTION_NAME].find_one({
+        "_id": ObjectId(wines_id)
+    })
+    
+    return render_template("edit_wine.html",winetype=winetype,countries=countries,price=price,wine=wine)
+    
+    
+    
+    
 
 
     

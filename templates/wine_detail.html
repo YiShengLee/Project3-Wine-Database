@@ -59,7 +59,7 @@
             
             <!--Button Section-->
             <div class="buttons text-center pb-2">
-                <a href="" data-toggle="tooltip" title="Edit wine information">
+                <a href={{ url_for('edit_wine',wines_id=wines._id) }} data-toggle="tooltip" title="Edit wine information">
                     <button id="edit" class="btn btn-primary m-2 p-1"><img src="https://img.icons8.com/dusk/64/000000/edit.png" class="icon8"> Edit
                     </button>
                 </a>
