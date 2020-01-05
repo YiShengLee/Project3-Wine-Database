@@ -125,7 +125,20 @@ def edit_wine(wines_id):
     return render_template("edit_wine.html",winetype=winetype,countries=countries,price=price,wine=wine)
     
     
+
+
+
+
+
+
+# Delete Wine Information Section
+@app.route('/delete_product/<wines_id>') 
+def delete_wine(wines_id):
+    wines = conn[DATABASE_NAME][COLLECTION_NAME].remove({
+        '_id': ObjectId(wines_id)
+    })
     
+    return redirect(url_for('search'))
     
 
 
