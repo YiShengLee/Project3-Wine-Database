@@ -2,7 +2,7 @@
 
 <style>
    .c3{
-        background-image: url(../static/img/vineyard1.png);
+        background-image: url(../static/img/grape.png);
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
@@ -11,14 +11,178 @@
         margin-bottom: 50px;
         box-shadow: 10px 10px 5px #aaaaaa;
    }
+   .formheader {
+        font-family: 'Permanent Marker', cursive;
+        font-size: 40px
+    }
+    
+    .input-group {
+        padding: 0px;
+    }
+    
+    .form-control {
+        width: 100%;
+        height: 50px;
+    }
+    
+    .control-label {
+        font-family: 'DM Serif Text', serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    /*Back Button Section*/
+    .bk-btn {
+      height: 52px;
+      width: 52px;
+      background-color: black;
+      border-radius: 30%;
+    }
+    .bk-btn:hover {
+        background-color: rgb(0,121,251);
+    }
+    .bk-btn .bk-btn-triangle {
+      position: relative;
+      top: 13px;
+      left: 10.4px;
+      width: 0;
+      height: 0;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-right: 13px solid white;
+    }
+    .bk-btn .bk-btn-bar {
+      position: relative;
+      background-color: white;
+      height: 7.8px;
+      width: 13px;
+      top: -3.64px;
+      left: 22.88px;
+    }
+    /*End of Back Button Section*/
 </style>
 
-<p>Help keep our list of products updated by correcting any outdated information you come across<br><br>
-As we are a user-contribution based community, some members may accidentally upload wrong product information<br><br>
-With your help, The Skincare Diaries can serve as an accurate guide to all our members!</p>
+<p>Kindly update all the wine information to up-to-date<br><br>
+This is a online community platform to provide wine information to either groups or individuals. This platform also provide an open discussion for people who are wine enthusiast!<br><br>
+With all of your contribution, WineIT can provide accurate wine information to all the members!</p>
+
+<legend>
+    <center><img src="https://img.icons8.com/cotton/64/000000/grape.png" alt="grape icons8" class="grape"><span><b class="formheader">Edit {{wine.firstname}} {{wine.lastname}} Form</b></span><img src="https://img.icons8.com/cotton/64/000000/grape.png" alt="grape icons8" class="grape"></center>
+</legend>
 
 <div class="container c3">
-   
+   <form method="POST" enctype="multipart/form-data">
+        <!--Back Button Section-->
+        <a href="{{url_for('search')}}">
+            <div class="bk-btn">
+                <div class="bk-btn-triangle"></div>
+                <div class="bk-btn-bar"></div>
+            </div>
+        </a><br>       
+        
+       <!--First Name Input-->
+       <div class="input form-group mb-3">
+            <div class="control-label">First Name:</div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input name="firstname" placeholder="First Name" class="form-control" type="text" value="{{wine.firstname}}">
+            </div>
+        </div>
+        
+        <!--Last Name Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Last Name:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input name="lastname" placeholder="Last Name" class="form-control" type="text" value="{{wine.lastname}}">
+            </div>
+        </div>        
+
+        <!--Type of Wine Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Type of Wine:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-list-ul"></i></span>
+                </div>
+                <select name="winetype" class="form-control selectpicker">
+                   {% for type in winetype %}
+                    <option value={{type.winetype}} {% if wine.type == winetype %} selected {% endif %} >{{type.winetype}}</option>
+                   {% endfor%}
+                </select>
+            </div>
+        </div>
+        
+        <!--Wine Country Origin Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Wine Country Origin:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-flag"></i></span>
+                </div>
+                <select name="country" id="" class="form-control selectpicker" required>
+                    {% for brand in country %}
+                    <option value={{brand.country}} {% if wine.type == country %} selected {% endif %}>{{brand.country}}</option>
+                    {% endfor%}
+                </select>
+            </div>
+        </div>        
+
+        <!--Winery Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Winery:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-store-alt"></i></span>
+                </div>
+                <input name="winery" placeholder="Wine Produced Name" class="form-control" type="text" value="{{wine.winery}}">
+            </div>
+        </div>
+
+        <!--Wine Label Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Title:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-wine-bottle"></i></span>
+                </div>
+                <input name="label" placeholder="Wine Label" class="form-control" type="text" value="{{wine.label}}">
+            </div>
+        </div>
+
+        <!--Price Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Wine Price:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-money-bill-alt"></i></span>
+                </div>
+                <input name="price" placeholder="&dollar; Cost of Wine" class="form-control" type="text" min="0" value="{{wine.price}}">
+            </div>
+        </div>
+
+        <!--Description Input-->
+        <div class="form-group mb-3">
+            <div class="control-label">Wine Narrative:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-keyboard"></i></span>
+                </div>
+                <input name="description" placeholder="Describe Your Wine Experience" class="form-control" type="text" value="{{wine.description}}">
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+                <br>
+                <button type="submit" class="button btn-xl btn-success">Edit Submit</button>
+            </div>
+        </div>
    
 </div>
 

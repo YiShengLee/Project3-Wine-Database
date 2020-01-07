@@ -116,21 +116,47 @@ def wine_detail(wine_id):
 @app.route('/edit_wine/<wines_id>')
 def edit_wine(wines_id):
     winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
-    countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
+    country = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find_one({
         "_id": ObjectId(wines_id)
     })
     
-    return render_template("edit_wine.html",winetype=winetype,countries=countries,price=price,wine=wine)
+    return render_template("edit_wine.html",winetype=winetype,country=country,price=price,wine=wine)
     
     
+# Submit Edit Wine Detail Section
+@app.route('/edit_wine/<wines_id>', methods=['POST'])
+def submit_edit_wine(wines_id):
+    wine = conn[DATABASE_NAME][COLLECTION_NAME].find_one({
+        "_id": ObjectId(wines_id)
+    })
+    
+    firstname = request.form.get('firstname')
+    lastname = request.form.get('lastname')
+    price = request.form.get('price')
+    country = request.form.get('country')
+    winetype = request.form.get('winetype')
+    label = request.form.get('label')
+    winery = request.form.get('winery')
+    description = request.form.get('description')
+    
+    # Update MONGODB wine information
+    conn[DATABASE_NAME][COLLECTION_NAME].update({
+         "_id": ObjectId(wines_id)
+    }, {
+        "firstname" : firstname.capitalize(),
+        "lastname" : lastname.capitalize(),
+        "price" : price,
+        "country" : country,
+        "winetype" : winetype,
+        "label" : label,
+        "winery" : winery.capitalize(),
+        "description" : description
+    })
+    return redirect(url_for('search'))
 
-
-
-
-
-
+    
 # Delete Wine Information Section
 @app.route('/delete_product/<wines_id>') 
 def delete_wine(wines_id):
