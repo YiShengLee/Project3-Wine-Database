@@ -97,22 +97,6 @@
     /*}*/
 </style>
 
-<!--<form class="form" method="POST">-->
-<!--    <span class="nametxt">Name:</span><br>-->
-<!--    <input type="text" class="name" name="name" placeholder="Insert Your Name"><br><br>-->
-
-<!--    <span>Points:</span><br>-->
-<!--    <input type="text" class="points" name="points"><br><br>-->
-
-<!--    <span>Variety:</span><br>-->
-<!--    <input type="text" class="variety" name="variety"><br><br>-->
-
-<!--    <span>Title:</span><br>-->
-<!--    <input type="text" class="title" name="title"><br><br>-->
-
-<!--    <input type="submit" class="button btn-xl btn-primary" >-->
-
-<!--</form>-->
 
 <!--<div class="container-fluid c1">-->
 <legend>
@@ -121,7 +105,7 @@
 
 <div class="container c2">
 
-    <form class="form-horizontal" method="POST" id="contact_form" action="{{url_for('post_wine')}}">
+    <form class="form-horizontal" method="POST" id="contact_form" action="{{url_for('post_wine')}}" enctype="multipart/form-data">
 
         <!--Form Section-->
         <!--Back Button Section-->
@@ -466,6 +450,17 @@
                 <input name="description" placeholder="Describe Your Wine Experience" class="form-control" type="text">
             </div>
         </div>
+        
+        <!--Add Image Section-->
+        <div class="form-group mb-3">
+            <div class="control-label">Image:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-keyboard"></i></span>
+                </div>
+                <input name="wine_image" class="form-control" type="file">
+            </div>
+        </div>        
 
         <!-- Button -->
         <div class="form-group">

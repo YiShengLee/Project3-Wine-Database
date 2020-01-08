@@ -35,6 +35,12 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html", title="index")
 
+# Add Picture Section
+@app.route('/file/<filename>')
+def file(filename):
+    return mongo.send_file(filename)
+
+
 # Add Wine Section
 @app.route('/add_wine')
 def add_wine():
@@ -52,6 +58,10 @@ def post_wine():
     winery = request.form.get('winery')
     description = request.form.get('description')
     
+    if "wine_image" in request.files:
+        wine_image = request.files['wine_image']
+        mongo.save_file(wine_image.filename, wine_image)
+    
     conn[DATABASE_NAME][COLLECTION_NAME].insert({
         "firstname" : firstname.capitalize(),
         "lastname" : lastname.capitalize(),
@@ -60,7 +70,8 @@ def post_wine():
         "winetype" : winetype,
         "label" : label,
         "winery" : winery.capitalize(),
-        "description" : description
+        "description" : description,
+        "wine_image" : wine_image.filename
     })
     
     
@@ -93,7 +104,7 @@ def search():
         country = 'Country'
     
     # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
-    print(criteria)
+    # print(criteria)
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
     winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
@@ -141,6 +152,13 @@ def submit_edit_wine(wines_id):
     winery = request.form.get('winery')
     description = request.form.get('description')
     
+    if "wine_image" in request.files and request.files['wine_image'].filename != "":
+        wine_image = request.files['wine_image']
+        image_filename = wine_image.filename
+        mongo.save_file(wine_image.filename, wine_image)
+    else:
+        image_filename = wine['wine_image']   
+    
     # Update MONGODB wine information
     conn[DATABASE_NAME][COLLECTION_NAME].update({
          "_id": ObjectId(wines_id)
@@ -152,8 +170,10 @@ def submit_edit_wine(wines_id):
         "winetype" : winetype,
         "label" : label,
         "winery" : winery.capitalize(),
-        "description" : description
+        "description" : description,
+        "wine_image" :image_filename
     })
+    
     return redirect(url_for('search'))
 
     

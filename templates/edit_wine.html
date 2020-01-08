@@ -70,7 +70,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
 </legend>
 
 <div class="container c3">
-   <form method="POST" enctype="multipart/form-data">
+   <form method="POST" enctype="multipart/form-data" id="contact_form" class="form-horizontal">
         <!--Back Button Section-->
         <a href="{{url_for('search')}}">
             <div class="bk-btn">
@@ -104,7 +104,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
         <!--Type of Wine Input-->
         <div class="form-group mb-3">
             <div class="control-label">Type of Wine:</div>
-            <div class="input-group ">
+            <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-list-ul"></i></span>
                 </div>
@@ -123,9 +123,9 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-flag"></i></span>
                 </div>
-                <select name="country" id="" class="form-control selectpicker" required>
+                <select name="country" class="form-control selectpicker" required>
                     {% for brand in country %}
-                    <option value={{brand.country}} {% if wine.type == country %} selected {% endif %}>{{brand.country}}</option>
+                    <option value={{brand.country}} {% if wine.brand == country %} selected {% endif %}>{{brand.country}}</option>
                     {% endfor%}
                 </select>
             </div>
@@ -138,7 +138,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-store-alt"></i></span>
                 </div>
-                <input name="winery" placeholder="Wine Produced Name" class="form-control" type="text" value="{{wine.winery}}">
+                <input name="winery" class="form-control" type="text" value="{{wine.winery}}">
             </div>
         </div>
 
@@ -149,7 +149,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-wine-bottle"></i></span>
                 </div>
-                <input name="label" placeholder="Wine Label" class="form-control" type="text" value="{{wine.label}}">
+                <input name="label" class="form-control" type="text" value="{{wine.label}}">
             </div>
         </div>
 
@@ -160,7 +160,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-money-bill-alt"></i></span>
                 </div>
-                <input name="price" placeholder="&dollar; Cost of Wine" class="form-control" type="text" min="0" value="{{wine.price}}">
+                <input name="price" class="form-control" type="text" min="0" value="{{wine.price}}">
             </div>
         </div>
 
@@ -171,9 +171,20 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-keyboard"></i></span>
                 </div>
-                <input name="description" placeholder="Describe Your Wine Experience" class="form-control" type="text" value="{{wine.description}}">
+                <input name="description" class="form-control" type="text" value="{{wine.description}}">
             </div>
         </div>
+        
+        <!--Add Image Section-->
+        <div class="form-group mb-3">
+            <div class="control-label">Image:</div>
+            <div class="input-group ">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-keyboard"></i></span>
+                </div>
+                <input name="wine_image" class="form-control" type="file" value="{{wine.wine_image}}">
+            </div>
+        </div>          
 
         <!-- Button -->
         <div class="form-group">
