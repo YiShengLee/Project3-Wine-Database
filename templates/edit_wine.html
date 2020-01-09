@@ -108,9 +108,10 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-list-ul"></i></span>
                 </div>
+              
                 <select name="winetype" class="form-control selectpicker">
                    {% for type in winetype %}
-                    <option value={{type.winetype}} {% if wine.type == winetype %} selected {% endif %} >{{type.winetype}}</option>
+                    <option value='{{type.winetype}}' {% if wine.winetype == type.winetype %} selected {% endif %} >{{type.winetype}}</option>
                    {% endfor%}
                 </select>
             </div>
@@ -125,7 +126,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 </div>
                 <select name="country" class="form-control selectpicker" required>
                     {% for brand in country %}
-                    <option value={{brand.country}} {% if wine.brand == country %} selected {% endif %}>{{brand.country}}</option>
+                    <option value='{{brand.country}}' {% if wine.country == brand.country %} selected {% endif %}>{{brand.country}}</option>
                     {% endfor%}
                 </select>
             </div>

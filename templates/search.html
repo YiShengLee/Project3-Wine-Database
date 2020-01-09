@@ -12,14 +12,16 @@
       height:30px;
   }
   .wine_img{
-      height:600px;
+      width: 100%;
+      height: 250px;      
   }
+
 </style>
 
 <a href="{{ url_for('search') }}">Clear Search</a>
 
 <div class="container" id="search">
-    <h2>Search for your desired Wine</h2>
+    <div class="searchHeader">Search For Your Desired Wine</div><br>
     <div class="row">
         <!--Filter profiles by different categories below-->
         <!--Dropdown for type -->
