@@ -1,12 +1,49 @@
 {% extends 'base.html'%} {% block content %}
 
+<div class="container c3">
+    <div class="row mb-xl-5 mb-md-3 mb-sm-3 mx-auto">
 
-Total number of wine input till {{date}} is {{n}}
+        <div class="left col-xl-8 col-md-7">The number of wine data contribute by everyone till
+            <br> <b>{{date}}</b> is: 
+        </div>
 
-<h1>Hello!</h1>
+        <div class="right col-xl-4 col-md-5">
+            <div class="counter" data-count="{{n}}">0</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+        <button class=""><a href="#red">Red Wine</a</button>>
+        </div>
+        
+        <div class="col">
+        <a href="#white">White Wine</a>
+        </div>
+        
+        <div class="col">
+        <a href="#rose">Rose Wine</a>
+        </div>
+        
+        <div class="col">
+        <a href="#sparkling">Sparkling Wine</a>
+        </div>
+        
+        <div class="col">
+        <a href="#fortified">Fortified Wine</a>
+        </div>
+    </div>
+    
+    
+    
+    <div class="row">
+        <img src="{{url_for('static', filename='img/WineType.png')}}" class="wineType"></img>
+    </div>
+</div>
 
-<div class="counter" data-count="{{n}}">0</div>
+<br><br>
 
+<p id="fortified">test!</p>
 
 
 {% endblock content %}

@@ -35,6 +35,12 @@
   transform: translateY(-7px);
 }
 
+/*Link scroll smooth [about page]*/
+html{
+  scroll-behavior: smooth;
+}
+
+/*Media queries for mobile phone*/
 @media only screen and (max-width: 767px) {
   .btn-xl {
       font-size: 0.8rem;
@@ -43,7 +49,25 @@
   .logo {
       height: 50px;
   }
+  .c3 {
+      padding: 20px;
+      max-width: 85vw;
+  }
+  div.left, div.counter{
+    margin: auto;
+    text-align: center;
+  }
+  div.right{
+    margin: 10px 0px 10px 0px;
+  }
+  div.counter{
+    font-size: 45px;
+    height: 70px;
+    width:70px;
+  }
 }
+
+
 
 /*-----------Index Section CSS-----------*/
 /*Background image display  */
@@ -87,17 +111,35 @@ hr.divider {
 }
 
 /*-----------About Section CSS-----------*/
+/*Container size*/
+.c3{
+  max-width: 65vw; 
+}
+
+/*left column of the row*/
+.left{
+  text-align: right;
+  margin: auto;
+  font-family: 'BioRhyme', serif;
+  font-size: larger;
+}
+
+/*Count up Section*/
 .counter {
-  display: table-cell;
   margin:1.5%;
-  font-size:50px;
+  font-size:60px;
   background-color: #FF6F6F;
-  width:200px;
+  width:100px;
   border-radius: 50%;
-  height:200px;
+  height:100px;
   vertical-align: middle;
   text-align: center;
   color:#fff;
+}
+
+/*Image alignment*/
+.wineType{
+  width: 100%
 }
 
 

@@ -33,7 +33,8 @@ mongo = PyMongo(app)
 #                           index=mongo.db.wine.find())
 
 def index():
-    return render_template("index.html", title="index")
+    n = conn[DATABASE_NAME][COLLECTION_NAME].find().count()
+    return render_template("index.html", title="index", n=n)
 
 @app.route('/about')
 def about():
