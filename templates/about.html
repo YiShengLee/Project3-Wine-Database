@@ -1,9 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 
 
-Total number of input till today is {{n}}
+Total number of wine input till {{date}} is {{n}}
 
 <h1>Hello!</h1>
+
+<div class="counter" data-count="{{n}}">0</div>
+
 
 
 {% endblock content %}

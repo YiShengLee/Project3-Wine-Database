@@ -2,7 +2,6 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
-from datetime import date
 import re
 
 
@@ -39,8 +38,10 @@ def index():
 @app.route('/about')
 def about():
     n = conn[DATABASE_NAME][COLLECTION_NAME].find().count()
-    # print(n)
-    return render_template("about.html", n=n)
+    from datetime import date
+    today = date.today()
+    date = today.strftime("%d %B %Y")
+    return render_template("about.html", n=n, date=date)
 
 # Add Picture Section
 @app.route('/file/<filename>')
