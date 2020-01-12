@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo, pymongo
 from bson.objectid import ObjectId
+from datetime import date
 import re
 
 
@@ -34,6 +35,12 @@ mongo = PyMongo(app)
 
 def index():
     return render_template("index.html", title="index")
+
+@app.route('/about')
+def about():
+    n = conn[DATABASE_NAME][COLLECTION_NAME].find().count()
+    # print(n)
+    return render_template("about.html", n=n)
 
 # Add Picture Section
 @app.route('/file/<filename>')

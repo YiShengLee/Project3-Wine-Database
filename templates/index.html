@@ -2,37 +2,35 @@
 
 <section class="home">
     <header class="masthead">
-    <div class="container h-100 top c1">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <!--Text Area Section-->
-        <div class="col-lg-10 align-self-end index_txt mb-xl-5 mb-md-4">
-          <h1 class="text-uppercase font-weight-bold">Your favourite red wine database</h1>
-          <hr class="divider my-4">
-          <div class="container col-lg-8">
-            <div class="row">
-            <p class="getStarted">Get started by clicking the button below to add your own wine preferance. If not click one SEARCH to view your preferance type of red wine.</p>
+        <div class="container h-100 top">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+                <!--Text Area Section-->
+                <div class="col-lg-10 align-self-end index_txt mb-xl-5 mb-md-4">
+                    <h1 class="text-uppercase font-weight-bold">Your favourite red wine database</h1>
+                    <hr class="divider my-4">
+                    <div class="container col-lg-8">
+                        <div class="row">
+                            <p class="getStarted">Get started by clicking the button below to add your own wine preferance. If not click one SEARCH to view your preferance type of red wine.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--Button Section-->
+                <div class="col-lg-8 align-self-baseline">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-xl-5 center m-3">
+                                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('search')}}">Get Started</a>
+                            </div>
+                            <div class="col-md-12 col-xl-5 center m-3">
+                                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('add_wine')}}">Add Your Wine</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <!--Button Section-->
-        <div class="col-lg-8 align-self-baseline">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 col-xl-5 center m-3">
-                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('search')}}">Get Started</a>
-              </div>
-              <div class="col-md-12 col-xl-5 center m-3">
-                <a class="btn btn-success btn-xl js-scroll-trigger" href="{{url_for('add_wine')}}">Add Your Wine</a>
-              </div>
-              
-            </div>
-          </div>
-          
-          
-        </div>
-      </div>
-    </div>
-  </header>
+    </header>
 </section>
 
 {% endblock content %}

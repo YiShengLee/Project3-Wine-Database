@@ -23,13 +23,8 @@
     <title>Wine Database</title>
 </head>
 <body>
+    
   <style>
-  /*Logo format*/
-  
-  .logo {
-      height: 70px;
-      /*padding-right:10px;*/
-  }
   
   /*.navbar {*/
   /*    height: 7vh;*/
@@ -38,48 +33,6 @@
   /*.footer {*/
   /*    height: 3vh;*/
   /*}*/
-  
-  /*navbar text*/
-  .navword {
-      font-family: 'Lobster', cursive;
-      font-size: 25px;
-      padding: 10px;
-  }
-  
-  /*style for success type of button*/
-  .btn-success {
-      color: #FFF;
-      background-color: #f4623a;
-      border-color: #f4623a;
-  }
-  /*style for all the button*/
-  .btn-xl {
-      padding: 1.25rem 2.25rem;
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 10rem;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease 0s;
-  }
-  /*Button Hover Section*/
-  .btn-xl:hover {
-      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-      color: #fff;
-      transform: translateY(-7px);
-    }
-  
-  @media only screen and (max-width: 767px) {
-      .btn-xl {
-          font-size: 0.8rem;
-          padding: 1rem 2rem;
-      }
-      .logo {
-          height: 50px;
-      }
-  }
-  
   </style>
   
 <!--Navbar Section-->
@@ -93,7 +46,7 @@
     <div class="collapse navbar-collapse navword bg-white" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="#">About</a>
+                <a class="nav-link active" href="{{url_for('about')}}">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" href="{{url_for('search')}}">Search</a>
