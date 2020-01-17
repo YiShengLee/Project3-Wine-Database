@@ -97,6 +97,8 @@ def search():
     country = request.args.get('country')
     criteria= {} 
     
+
+    
     if type and type != 'Type':
         criteria['winetype'] = type
     else:
@@ -104,6 +106,9 @@ def search():
         
     if cost and cost != 'Cost':
         criteria['price'] = cost
+        # x= price.min
+        # y= price.max
+        # if (saerch in your wine databse $$) >= x and <= y
     else:
         cost ='Wine Price'
         
@@ -119,6 +124,9 @@ def search():
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
     
+    # x = conn[DATABASE_NAME][COLLECTION_NAME4].price.min
+    # y = conn[DATABASE_NAME][COLLECTION_NAME4].price.max
+    # print(x)
     
     return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price)
 
@@ -194,11 +202,6 @@ def delete_wine(wines_id):
     })
     
     return redirect(url_for('search'))
-    
-
-
-    
-
     
 
 
