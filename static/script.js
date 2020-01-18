@@ -36,7 +36,18 @@ $(document).ready(function(){
                         message: 'Please enter the cost of the wine'
                     }
             }
-    },    
+    },
+    label:{
+          validators: {
+                    stringLength: {
+                        max: 25,
+                        message: 'The title must be less than 25 characters'
+                    },
+                    notEmpty:{
+                        message: 'Please enter wine label'
+                    }
+          }  
+    },
     
     }});
     

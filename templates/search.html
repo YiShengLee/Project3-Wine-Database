@@ -3,29 +3,20 @@
   .fas{
     font-size:30px;
   }
-  .scrollable-menu{
-      height: auto;
-      max-height: 200px;
-      overflow-x: hidden;
-  }
-  .icon8{
-      height:30px;
-  }
-  .imgHolder{
-      height:350px;
-  }
-  .wine_img{
-      width: 100%;
-      height: 100%;
-      /*margin: auto;*/
-  }
+  
 
 </style>
 
-<a href="{{ url_for('search') }}">Clear Search</a>
+
 
 <div class="container" id="search">
     <div class="searchHeader">Search For Your Desired Wine</div><br>
+    
+    <!--Clear Search Section-->
+    <div class="search">
+        <a href="{{ url_for('search') }}" class="btn btn-primary"><img src="{{url_for('static', filename='img/delete_mark.png')}}"></img> Clear Search</a><br>
+    </div>
+    
     <div class="row">
         <!--Filter profiles by different categories below-->
         <!--Dropdown for type -->
@@ -41,10 +32,16 @@
         <!--Dropdown for cost -->
         <div class="col-4 dropdown" id="tabs">
             <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{cost}}</button>
-            <div class="dropdown-menu">
-                {% for cost in price %}
-                <a href="?cost={{cost.price}}" class="dropdown-item">{{cost.price}}</a> 
-                {% endfor %}
+            <div class="dropdown-menu" name="cost-search">
+                <!--{% for cost in price %}-->
+                <!--<a href="?cost={{cost.price}}" class="dropdown-item">{{cost.price}}</a> -->
+                <!--{% endfor %}-->
+                <a class="dropdown-item" href="#" value="1">$0 to $10</a>
+                <a class="dropdown-item" href="#" value="2">$11 to $20</a>
+                <a class="dropdown-item" href="#" value="3">$21 to $30</a>
+                <a class="dropdown-item" href="#" value="4">$31 to $40</a>
+                <a class="dropdown-item" href="#" value="5">$41 to $50</a>
+                <a class="dropdown-item" href="#" value="6">$51 and above</a>
             </div>
         </div>
 
@@ -78,11 +75,18 @@
         <!-- Team Member 1 -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
-                <div class="">
-                    Wine Brand: {{each_wine.label}}
+                <div class="brandHeader">
+                    Wine Brand:
                 </div>
+                
+                <div class="brand">
+                    {{each_wine.label}}
+                </div>
+                
                 <div class="imgHolder">
-                <img src="{{url_for('file', filename=each_wine['wine_image'])}}" class="card-img-top wine_img" alt="Wine Image">
+                    <a href="wine_detail/{{each_wine['_id']}}">
+                        <img src="{{url_for('file', filename=each_wine['wine_image'])}}" class="card-img-top wine_img" alt="Wine Image">
+                    </a>
                 </div>
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Name: {{each_wine.firstname}} {{each_wine.lastname}}</h5>
@@ -104,7 +108,9 @@
                           <div id="collapse{{loop.index}}" class="collapse" data-parent="#accordion">
                               <div class="card-body">
                                   {{each_wine.description}}
-                                  <a class="btn btn-success" href="wine_detail/{{each_wine['_id']}}">Find Out More</a>
+                                  <div class="findOut pt-3">
+                                      <a class="btn btn-success" href="wine_detail/{{each_wine['_id']}}">Find Out More</a>
+                                  </div>
                               </div>
                           </div>
                         </div>

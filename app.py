@@ -95,6 +95,7 @@ def search():
     type = request.args.get('type')
     cost = request.args.get('cost')
     country = request.args.get('country')
+    # cost_term = request.args.get('cost-search')
     criteria= {} 
     
 
@@ -106,9 +107,6 @@ def search():
         
     if cost and cost != 'Cost':
         criteria['price'] = cost
-        # x= price.min
-        # y= price.max
-        # if (saerch in your wine databse $$) >= x and <= y
     else:
         cost ='Wine Price'
         
@@ -117,18 +115,37 @@ def search():
     else:
         country = 'Country'
     
+    query={}
+    
+    # if cost_term == "1":
+    #     query = { { price: { $gt: 0, $lt: 11 } } }
+    # else:
+    #     query="None"
+
+        
+        
+    
     # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
     # print(criteria)
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
+    wine_cost = conn[DATABASE_NAME][COLLECTION_NAME].find(query)
     winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
+    
     
     # x = conn[DATABASE_NAME][COLLECTION_NAME4].price.min
     # y = conn[DATABASE_NAME][COLLECTION_NAME4].price.max
     # print(x)
     
-    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price)
+        
+    
+    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price,wine_cost=wine_cost)
+    
+    
+
+        
+        
 
 # Add Wine Detail Section
 @app.route('/wine_detail/<wine_id>')
