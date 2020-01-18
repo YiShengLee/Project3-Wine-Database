@@ -21,7 +21,7 @@
         <!--Filter profiles by different categories below-->
         <!--Dropdown for type -->
         <div class="col-4 dropdown" id="tabs">
-            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{type}}</button>
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{wine_type}}</button>
             <div class="dropdown-menu">
                 {% for type in winetype %}
                 <a href="?type={{type.winetype}}" class="dropdown-item">{{type.winetype}}</a> 
@@ -31,17 +31,17 @@
         
         <!--Dropdown for cost -->
         <div class="col-4 dropdown" id="tabs">
-            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{cost}}</button>
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">cost</button>
             <div class="dropdown-menu" name="cost-search">
                 <!--{% for cost in price %}-->
                 <!--<a href="?cost={{cost.price}}" class="dropdown-item">{{cost.price}}</a> -->
                 <!--{% endfor %}-->
-                <a class="dropdown-item" href="#" value="1">$0 to $10</a>
-                <a class="dropdown-item" href="#" value="2">$11 to $20</a>
-                <a class="dropdown-item" href="#" value="3">$21 to $30</a>
-                <a class="dropdown-item" href="#" value="4">$31 to $40</a>
-                <a class="dropdown-item" href="#" value="5">$41 to $50</a>
-                <a class="dropdown-item" href="#" value="6">$51 and above</a>
+                <a class="dropdown-item" href="?price_range=1" value="1">$0 to $10</a>
+                <a class="dropdown-item" href="?price_range=2" value="2">$11 to $20</a>
+                <a class="dropdown-item" href="?price_range=3" value="3">$21 to $30</a>
+                <a class="dropdown-item" href="?price_range=4" value="4">$31 to $40</a>
+                <a class="dropdown-item" href="?price_range=5" value="5">$41 to $50</a>
+                <a class="dropdown-item" href="?price_range=6" value="6">$51 and above</a>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
                 </div>
                 <div class="card-body text-center">
                     <h5 class="card-title mb-0">Name: {{each_wine.firstname}} {{each_wine.lastname}}</h5>
-                    <h5 class="card-title mb-0">Price: ${{each_wine.price}}</h5>
+                    <h5 class="card-title mb-0">Price: {{"$%.2f"|format(each_wine.price)}}</h5>
                     <div class="card-text text-black-70">Country: {{each_wine.country}}</div><br>
 
                     <!--<div class="card-text text-black-50">Review: {{each_wine.Description}}</div>-->

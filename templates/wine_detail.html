@@ -15,7 +15,6 @@
     <div class="row">
         <!--Left Side Section-->
         <div class="col left">
-
             <img src="{{url_for('file', filename=wines['wine_image'])}}" class="card-img-top wine_img" alt="..."><br>
         {{wines.label}}
         </div>
@@ -34,7 +33,7 @@
             </div>
             
             <div>
-            Cost: {{wines.price}} 
+            Cost: {{"$%.2f"|format(wines.price)}} 
             </div>
             
             <div>

@@ -74,7 +74,7 @@ def post_wine():
     conn[DATABASE_NAME][COLLECTION_NAME].insert({
         "firstname" : firstname.capitalize(),
         "lastname" : lastname.capitalize(),
-        "price" : price,
+        "price" : float(price),
         "country" : country,
         "winetype" : winetype,
         "label" : label,
@@ -92,55 +92,64 @@ def post_wine():
 @app.route('/search')
 def search():
     # print(request.args)
-    type = request.args.get('type')
-    cost = request.args.get('cost')
+    wine_type = request.args.get('type')
+    # cost = request.args.get('cost')
     country = request.args.get('country')
-    # cost_term = request.args.get('cost-search')
+    cost_term = request.args.get('price_range')
     criteria= {} 
+    print(wine_type)
+    print(cost_term)
+    print(country)
     
-
-    
-    if type and type != 'Type':
-        criteria['winetype'] = type
+    if wine_type and wine_type != 'Type':
+        criteria['winetype'] = wine_type
     else:
-        type = 'Wine Type'
+        wine_type = 'Wine Type'
         
-    if cost and cost != 'Cost':
-        criteria['price'] = cost
-    else:
-        cost ='Wine Price'
+    # if cost and cost != 'Cost':
+    #     criteria['price'] = cost
+    # else:
+    #     cost ='Wine Price'
+    
+    # if cost_term == "1":
+    #     criteria =  { "price": {"$gt": 0, "$lt": 10 }}
+    
+    cost_term_dict = {
+        "1": { "price": {"$gt": 0, "$lt": 10 }},
+        "2": { "price": {"$gt": 11, "$lt": 20 }},
+        "3": { "price": {"$gt": 21, "$lt": 30 }},
+        "4": { "price": {"$gt": 31, "$lt": 40 }},
+        "5": { "price": {"$gt": 41, "$lt": 50 }},
+        "6": { "price": {"$gt": 51 }}
+    }
+    if cost_term != None:
+        criteria = cost_term_dict[cost_term]
+        print(criteria)
         
     if country and country != 'Country':
         criteria['country'] = country
     else:
         country = 'Country'
     
-    query={}
-    
-    # if cost_term == "1":
-    #     query = { { price: { $gt: 0, $lt: 11 } } }
-    # else:
-    #     query="None"
-
-        
         
     
     # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
     # print(criteria)
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
-    wine_cost = conn[DATABASE_NAME][COLLECTION_NAME].find(query)
+    # wine_cost = conn[DATABASE_NAME][COLLECTION_NAME].find(query)
     winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
     
+    wine = list(wine)
     
-    # x = conn[DATABASE_NAME][COLLECTION_NAME4].price.min
-    # y = conn[DATABASE_NAME][COLLECTION_NAME4].price.max
-    # print(x)
+    # print("Hello",list(wine))
     
+
+    # return render_template("dummy.html",wine=wine)
         
     
-    return render_template("search.html", title="search", wine=wine,type=type,cost=cost,country=country,winetype=winetype,countries=countries,price=price,wine_cost=wine_cost)
+    return render_template("search.html", title="search", wine=wine,wine_type=wine_type,country=country,winetype=winetype,countries=countries,price=price)
     
     
 
@@ -199,7 +208,7 @@ def submit_edit_wine(wines_id):
     }, {
         "firstname" : firstname.capitalize(),
         "lastname" : lastname.capitalize(),
-        "price" : price,
+        "price" : float(price),
         "country" : country,
         "winetype" : winetype,
         "label" : label,

@@ -161,7 +161,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-money-bill-alt"></i></span>
                 </div>
-                <input name="price" class="form-control" type="text" min="0" value="{{wine.price}}">
+                <input name="price" class="form-control" type="text" min="0" value="{{"$%.2f"|format(wine.price)}}">
             </div>
         </div>
 
