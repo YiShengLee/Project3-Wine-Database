@@ -218,6 +218,8 @@ a{
   color: black;
   font-family: 'EB Garamond', serif;
   font-weight: bold;
+  background-color: grey;
+  border-color: grey;
 }
 /*Clear Search Icon*/
 .search img{
