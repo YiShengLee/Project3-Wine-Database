@@ -36,4 +36,22 @@ As a user, I had an interest in wine since young. So i want to create a website 
 - Able to store wine pictures
 - Able to learn more information about different types of wine
 
+## UX <a name="UX"></a>
+This project I started with mobile first design approach. I started creating mockups wireframe on paper for mobile only. The design of the site is fully design by myself, showcasing smooth layout and interactive for most devices. Milstones had to be set in order to finish this project Below are steps by steps of the journey that required to be achieved for this website.
+1. I want to create a website to showcase about wine information
+2. I link the website to a database (MongoDB)
+3. I want to have a minimum display of 20 wine information
+4. User are able to create the own wine information by filling in a form
+5. User are able to view their created wine information
+6. User are able to edit any wine information by editing the form information
+7. User are able to delete any wine information
+8. User are able to filter their search condition by wine type, wine cost and wine country origin
+9. I want to display wine image
+10. I want user to know more knowledge of different type of wine out in the world
+11. I want the website to be mobile, notepad, laptop and large screen responsive
+12. I want the website to look trendy, smooth and overall attractive and interactive
+ 
+
+
+
 
