@@ -20,7 +20,7 @@
     <div class="row">
         <!--Filter profiles by different categories below-->
         <!--Dropdown for type -->
-        <div class="col-4 dropdown" id="tabs">
+        <div class="col-md-4 col-sm-12 dropdown mb-3" id="tabs">
             <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{wine_type}}</button>
             <div class="dropdown-menu">
                 {% for type in winetype %}
@@ -30,7 +30,7 @@
         </div>
         
         <!--Dropdown for cost -->
-        <div class="col-4 dropdown" id="tabs">
+        <div class="col-md-4 col-sm-12 dropdown mb-3" id="tabs">
             <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Cost</button>
             <div class="dropdown-menu" name="cost-search">
                 <!--{% for cost in price %}-->
@@ -46,7 +46,7 @@
         </div>
 
         <!--Dropdown for Country -->
-        <div class="col-4 dropdown" id="tabs">
+        <div class="col-md-4 col-sm-12 dropdown mb-3" id="tabs">
             <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">{{country}}</button>
             <div class="dropdown-menu scrollable-menu">
                 
