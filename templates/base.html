@@ -12,7 +12,7 @@
     <!--<link rel="stylesheet" type="text/css" href="https://a92f02c35b504ad498b1d92daf228d98.vfs.cloud9.us-east-1.amazonaws.com/static/css/style.css">-->
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
     <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css?family=BioRhyme|DM+Serif+Text|EB+Garamond|Lobster|Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme|Courgette|DM+Serif+Text|EB+Garamond|Lobster|Permanent+Marker&display=swap" rel="stylesheet">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/2344b1213a.js" crossorigin="anonymous"></script>
     <!--bootstrap validator [Javascript]-->
@@ -27,7 +27,7 @@
   
 <!--Navbar Section-->
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <a href="{{url_for('index')}}"><img class="logo" src="../static/img/logo.png" alt="logo"></a>
+    <a href="{{url_for('index')}}"><img class="logo" src="{{url_for('static', filename='img/logo.png')}}" alt="logo"></a>
     <a class="navbar-brand navword" href="{{ url_for('index')}}">WineIT</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>

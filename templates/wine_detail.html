@@ -1,28 +1,25 @@
 {% extends 'base.html'%} {% block content %}
-<style>
-    .contribute{
-        font-family: 'EB Garamond', serif;
-        font-size:20px;
-    }
-    .wine_img{
-      width:250px;
-    }    
-</style>
 
-
-<div class="container">
+<div class="container mb-5">
+    <!--Back Button Section-->
+    <a href="{{url_for('search')}}">
+        <div class="bk-btn">
+            <div class="bk-btn-triangle"></div>
+            <div class="bk-btn-bar"></div>
+        </div>
+    </a>
     <div class="type text-center">{{wines.winetype}}</div>
     <div class="row">
         <!--Left Side Section-->
         <div class="col left">
-            <img src="{{url_for('file', filename=wines['wine_image'])}}" class="card-img-top wine_img" alt="..."><br>
+            <img src="{{url_for('file', filename=wines['wine_image'])}}" class="card-img-top wine_img" alt="Wine Photo"><br><br>
         {{wines.label}}
         </div>
         
         <!--Right Side Section-->
-        <div class="col right">
+        <div class="col detai_right">
             <div class="contribute">
-                <span>
+                <span class="header">
                     Contributor:
                 </span>
                 
@@ -33,19 +30,36 @@
             </div>
             
             <div>
-            Cost: {{"$%.2f"|format(wines.price)}} 
+                <span class="header">
+                    Cost:
+                </span>
+                
+                <span>
+                    {{"$%.2f"|format(wines.price)}} 
+                </span>
+             
+            </div>
+            
+            <div class="country">
+                <span class="header">
+                    Country:
+                </span>
+             {{wines.country}} <img src="../static/img/Flag_icons/{{wines.country}}.png" alt="country icon">
+            </div>
+            
+            
+            <div>
+                <span class="header">
+                    Winery:
+                </span>
+            {{wines.winery}} 
             </div>
             
             <div>
-            Country: {{wines.country}} 
-            </div>
-            
-            <div>
-            Winery: {{wines.winery}} 
-            </div>
-            
-            <div>
-            Decription: {{wines.description}} 
+                <span class="header">
+                     Decription:
+                </span>
+            {{wines.description}} 
             </div>
             
             
@@ -56,13 +70,13 @@
             
             
             <!--Button Section-->
-            <div class="buttons text-center pb-2">
+            <div class="buttons text-center m-2">
                 <a href={{ url_for('edit_wine',wines_id=wines._id) }} data-toggle="tooltip"  title="Edit wine information">
                     <button id="edit" class="btn btn-primary m-2 p-1"><img src="https://img.icons8.com/dusk/64/000000/edit.png" class="icon8"> Edit
                     </button>
                 </a>
                 <a data-toggle="modal" data-target=".bd-4-modal-md" title="Delete wine information">
-                    <button id="delete" class="btn btn-danger m-2 p-1"><img src="https://img.icons8.com/plasticine/64/000000/delete-forever.png" class="icon8"> Delete
+                    <button id="delete" class="btn btn-danger m-2 p-2"><img src="https://img.icons8.com/plasticine/64/000000/delete-forever.png" class="icon8"> Delete
                     </button>
                 </a>
             </div>

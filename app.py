@@ -91,7 +91,6 @@ def post_wine():
 # Add Search Section
 @app.route('/search')
 def search():
-    # print(request.args)
     wine_type = request.args.get('type')
     # cost = request.args.get('cost')
     country = request.args.get('country')
@@ -111,9 +110,7 @@ def search():
     # else:
     #     cost ='Wine Price'
     
-    # if cost_term == "1":
-    #     criteria =  { "price": {"$gt": 0, "$lt": 10 }}
-    
+    # Dictionary
     cost_term_dict = {
         "1": { "price": {"$gt": 0, "$lt": 10 }},
         "2": { "price": {"$gt": 11, "$lt": 20 }},
@@ -122,39 +119,29 @@ def search():
         "5": { "price": {"$gt": 41, "$lt": 50 }},
         "6": { "price": {"$gt": 51 }}
     }
+    
     if cost_term != None:
         criteria = cost_term_dict[cost_term]
-        print(criteria)
+        # print(criteria)
         
     if country and country != 'Country':
         criteria['country'] = country
     else:
         country = 'Country'
     
-        
     
-    # products = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
-    # print(criteria)
     wine = conn[DATABASE_NAME][COLLECTION_NAME].find(criteria)
-    # wine_cost = conn[DATABASE_NAME][COLLECTION_NAME].find(query)
     winetype = conn[DATABASE_NAME][COLLECTION_NAME2].find()
     countries = conn[DATABASE_NAME][COLLECTION_NAME3].find()
     price = conn[DATABASE_NAME][COLLECTION_NAME4].find()
     
     wine = list(wine)
     
-    # print("Hello",list(wine))
-    
-
-    # return render_template("dummy.html",wine=wine)
-        
     
     return render_template("search.html", title="search", wine=wine,wine_type=wine_type,country=country,winetype=winetype,countries=countries,price=price)
     
     
 
-        
-        
 
 # Add Wine Detail Section
 @app.route('/wine_detail/<wine_id>')

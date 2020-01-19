@@ -31,7 +31,7 @@
         
         <!--Dropdown for cost -->
         <div class="col-4 dropdown" id="tabs">
-            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">cost</button>
+            <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">Cost</button>
             <div class="dropdown-menu" name="cost-search">
                 <!--{% for cost in price %}-->
                 <!--<a href="?cost={{cost.price}}" class="dropdown-item">{{cost.price}}</a> -->
@@ -85,7 +85,7 @@
                 
                 <div class="imgHolder">
                     <a href="wine_detail/{{each_wine['_id']}}">
-                        <img src="{{url_for('file', filename=each_wine['wine_image'])}}" class="card-img-top wine_img" alt="Wine Image">
+                        <img src="{{url_for('file', filename=each_wine['wine_image'])}}" class="card-img-top wine_img" alt="Wine Image" title="Click for more wine detail">
                     </a>
                 </div>
                 <div class="card-body text-center">

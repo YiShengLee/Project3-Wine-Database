@@ -46,6 +46,35 @@ html{
   scroll-behavior: smooth;
 }
 
+/*Back Button Section*/
+.bk-btn {
+  height: 52px;
+  width: 52px;
+  background-color: black;
+  border-radius: 30%;
+}
+.bk-btn:hover {
+    background-color: rgb(0,121,251);
+}
+.bk-btn .bk-btn-triangle {
+  position: relative;
+  top: 13px;
+  left: 10.4px;
+  width: 0;
+  height: 0;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-right: 13px solid white;
+}
+.bk-btn .bk-btn-bar {
+  position: relative;
+  background-color: white;
+  height: 7.8px;
+  width: 13px;
+  top: -3.64px;
+  left: 22.88px;
+}
+/*End of Back Button Section*/
 
 
 /*Media queries for mobile phone*/
@@ -166,41 +195,6 @@ a{
   transition: all 0.3s ease 0s;
 }
 
-/*Set the button to middle section*/
-/*.middle{*/
-/*  margin: auto;*/
-/*  display:table;*/
-/*  table-layout:fixed;*/
-/*  width:100%;*/
-/*}*/
-
-/*.btnAbout{*/
-/*  display:table-cell;*/
-/*}*/
-
-/*@media only screen and (max-width: 1065px) {*/
-/*  .btn-about {*/
-/*    font-size: 1rem;*/
-/*    padding: 1rem 2rem;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 935px) {*/
-/*  .btn-about {*/
-/*    font-size: 1rem;*/
-/*    padding: 0.75rem 1.75rem;*/
-/*  }*/
-/*  .btnAbout{*/
-/*    padding:0px;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 770px) {*/
-/*  .btn-about {*/
-/*    font-size: 0.6rem;*/
-/*    padding: 0.25rem 1rem;*/
-/*  }*/
-/*}*/
 
 /*-----------Search Section CSS-----------*/
 /*Search Header*/
@@ -218,8 +212,8 @@ a{
   color: black;
   font-family: 'EB Garamond', serif;
   font-weight: bold;
-  background-color: grey;
-  border-color: grey;
+  background-color: rgb(108,117,125);
+  border-color: rgb(108,117,125);
 }
 /*Clear Search Icon*/
 .search img{
@@ -258,6 +252,33 @@ a{
 }
 
 /*-----------Wine Detail Section CSS-----------*/
+/*Image Alignment*/
 .left{
   text-align: center;
+}
+/*Image Size*/
+.wine_img{
+  width:250px;
+}   
+/*Flag Display Size*/
+.country img{
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+/*wine type text*/
+.type{
+  font-family: 'Courgette', cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+/*font size for right side*/
+.detai_right{
+  font-size: 20px;
+  font-family: 'EB Garamond', serif;
+}
+/*Text header*/
+.header{
+  font-family: 'DM Serif Text', serif;
+  font-size: 25px;
 }
