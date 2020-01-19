@@ -7,8 +7,8 @@
 5. #### [Technologies Used](#technology)
 6. #### [Future Features to Implement](#implement)
 7. #### [Testing](#testing)
-8. #### [Deployment](#Deployment)
-9. #### [Credits](#Credits)
+8. #### [Deployment](#deployment)
+9. #### [Credits](#credits)
 
 <br>
 
@@ -153,7 +153,7 @@ Manual testing was conducted to ensure the user story objectives where achieved.
 7. Button
     - Ensure all the button click to the correct link in the website
 
-## Deployment <a name="Deployment"></a>
+## Deployment <a name="deployment"></a>
 The website was created using AWS Cloud9. Git was used for version control and pushed to a repository hosted on Github. <br>
 The website is deployed using Heroku and the link is [Project3 Wine Database](https://ysl-wine-database.herokuapp.com/).
 
@@ -165,19 +165,47 @@ If you wish to run this code locally then please follow the instructions below.
 4.	Copy all the file and load it into Visual Studio Code.
     - Download Link:[Visual Studio Code](https://code.visualstudio.com/)
 
+## Credits <a name="credits"></a>
+### Code
+- [w3schools](https://www.w3schools.com/)
+    - Grid Layout
+    - Media Query
 
+### Images
+All images for this web site are being used under free commercial license from:
+- [ShutterStock](https://www.google.com.sg/)
+- [Unsplash](https://unsplash.com/)
+    - [addwine](https://unsplash.com/photos/xcDrhb4mhLA)
+    - [vineyard](https://unsplash.com/photos/2cRXSWyMHA8)
+    - [grape](https://unsplash.com/photos/1gBUXhf0PtA)
+- [Imgur](https://imgur.com/)
+    - [WineType](http://i.imgur.com/VgWqHnq.png)
+    - []()
 
+### Icons
+- [List Icon](https://fontawesome.com/icons/list-ul?style=solid)
 
+- [User Icon](https://fontawesome.com/icons/user?style=solid)
 
+- [Wine Glass](https://fontawesome.com/icons/wine-glass-alt?style=solid)
 
+- [Flag Icon](https://fontawesome.com/icons/flag?style=solid)
 
-    - [BioRhyme](https://fonts.google.com/?query=BioRhyme)
-    - [DM Serif Text](https://fonts.google.com/?query=DM+Serif+Text)
-    - [EB Garamond](https://fonts.google.com/?query=EB+Garamond)
-    - [Lobster](https://fonts.google.com/?query=Lobster)
-    - [Permanent Marker](https://fonts.google.com/?query=Permanent+Marker)
-    - [Courgette](https://fonts.google.com/?query=Courgette)
+- [Down Arrow](https://fontawesome.com/icons/sort-down?style=solid)
 
+- [Shop Icon](https://fontawesome.com/icons/store-alt?style=solid)
 
+### Fonts
+- [BioRhyme](https://fonts.google.com/?query=BioRhyme)
+- [DM Serif Text](https://fonts.google.com/?query=DM+Serif+Text)
+- [EB Garamond](https://fonts.google.com/?query=EB+Garamond)
+- [Lobster](https://fonts.google.com/?query=Lobster)
+- [Permanent Marker](https://fonts.google.com/?query=Permanent+Marker)
+- [Courgette](https://fonts.google.com/?query=Courgette)
+
+### Others
+- [Flash Message](https://www.tutorialspoint.com/flask/flask_message_flashing.htm)
+- [Modal Bootstrap](https://getbootstrap.com/docs/4.0/components/modal/)
+- [Bootstrap Validation](http://bootstrapvalidator.votintsev.ru/getting-started/)
 
 
