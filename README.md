@@ -105,7 +105,11 @@ Below are a list of the programming languages, technologies and frameworks used 
     - Generate website app icon
 - Google Chrome Developer Tools
 
-
+## Future Features to Implement <a name="implement"></a>
+In the future, I would like to:
+- Add a rating for each wine information
+- A table to display which user contribute the most
+- A button to add more wine categories
 
 
 
