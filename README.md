@@ -50,8 +50,21 @@ This project I started with mobile first design approach. I started creating moc
 10. I want user to know more knowledge of different type of wine out in the world
 11. I want the website to be mobile, notepad, laptop and large screen responsive
 12. I want the website to look trendy, smooth and overall attractive and interactive
- 
 
+## Features <a name="features"></a>
+The website has been designed to be display nicely on all form of devices (TV, laptop, tablet and mobile).
+
+### Features on this website are:
+- Add wine information in a nicely design form layout
+- Display the wine information in smooth and interactive card format
+- Edit wine information in a nicely design form layout
+- Delete any wine information which is not **valid**
+- Added accordion for wine description
+- Filter function (Wine Type, Wine Cost & Wine Country Origin)
+- Clear search function to remove all the filter
+- Added modal function for delete button with conformation button
+- Added counter for total number of wine information display in the website
+- Clickable button to redirect to the desire page of the website
 
 
 
