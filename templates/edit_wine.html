@@ -1,46 +1,17 @@
 {% extends 'base.html'%} {% block content %}
 
-<style>
-   .c3{
-        background-image: url(../static/img/grape.png);
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        padding: 80px;
-        border-radius: 2rem;
-        margin-bottom: 50px;
-        box-shadow: 10px 10px 5px #aaaaaa;
-   }
-   .formheader {
-        font-family: 'Permanent Marker', cursive;
-        font-size: 40px
-    }
-    
-    .input-group {
-        padding: 0px;
-    }
-    
-    .form-control {
-        width: 100%;
-        height: 50px;
-    }
-    
-    .control-label {
-        font-family: 'DM Serif Text', serif;
-        font-size: 30px;
-        font-weight: bold;
-    }
-</style>
+<p class="header text-center pt-2 pb-2 edit">Kindly update all the wine information to up-to-date<br>
 
-<p>Kindly update all the wine information to up-to-date<br><br>
-This is a online community platform to provide wine information to either groups or individuals. This platform also provide an open discussion for people who are wine enthusiast!<br><br>
+This is a online community platform to provide wine information to either groups or individuals. This platform also provide an open 
+discussion for people who are wine enthusiast!<br>
+
 With all of your contribution, WineIT can provide accurate wine information to all the members!</p>
 
 <legend>
     <center><img src="https://img.icons8.com/cotton/64/000000/grape.png" alt="grape icons8" class="grape"><span><b class="formheader">Edit {{wine.firstname}} {{wine.lastname}} Form</b></span><img src="https://img.icons8.com/cotton/64/000000/grape.png" alt="grape icons8" class="grape"></center>
 </legend>
 
-<div class="container c3">
+<div class="container c4">
    <form method="POST" enctype="multipart/form-data" id="contact_form" class="form-horizontal">
         <!--Back Button Section-->
         <a href="{{url_for('search')}}">
@@ -64,7 +35,7 @@ With all of your contribution, WineIT can provide accurate wine information to a
         <!--Last Name Input-->
         <div class="form-group mb-3">
             <div class="control-label">Last Name:</div>
-            <div class="input-group ">
+            <div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
