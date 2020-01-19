@@ -96,9 +96,9 @@ def search():
     country = request.args.get('country')
     cost_term = request.args.get('price_range')
     criteria= {} 
-    print(wine_type)
-    print(cost_term)
-    print(country)
+    # print(wine_type)
+    # print(cost_term)
+    # print(country)
     
     if wine_type and wine_type != 'Type':
         criteria['winetype'] = wine_type

@@ -130,6 +130,41 @@ This site is tested to be responsive on the following devices:
     - Google Chrome
     - Internet Explorer 11
 
+Manual testing was conducted to ensure the user story objectives where achieved.
+1. Create Wine Information
+    - Ensure input first name characters **min is 2** and **max is 30** [Display message if condition is not met]
+    - Ensure input last name characters **min is 2** and **max is 30** [Display message if condition is not met]
+    - Ensure type of wine is being **selected** in the dropdown list [Display message if condition is not met]
+    - Ensure wine country origin is being **selected** in the dropdown list [Display message if condition is not met]
+    - Ensure wine label characters **max is 25** [Display message if condition is not met]
+    - Ensure wine price input is **integar** and able to input **2 decimals** [Display message if condition is not met]
+2. Read Wine Information
+    - Ensure all the input information is being displayed correctly
+    - Ensure the picture is display correctly
+3. Edit & Update Wine Information
+    - Same rules apply to create wine information
+    - Ensure all information changed will be updated and displayed correctly
+4. Delete Wine Information
+    - Ensure information is being wipe clean and does not displayed
+5. Icon Display
+    - Ensure display the right icon and size
+6. Image Display
+    - Ensure display the right imgage and size
+7. Button
+    - Ensure all the button click to the correct link in the website
+
+## Deployment <a name="Deployment"></a>
+The website was created using AWS Cloud9. Git was used for version control and pushed to a repository hosted on Github. <br>
+The website is deployed using Heroku and the link is [Project3 Wine Database](https://ysl-wine-database.herokuapp.com/).
+
+### How to deploy the code locally
+If you wish to run this code locally then please follow the instructions below.
+1.	Download the code from the Github repository at [https://github.com/YiShengLee/Project3-Wine-Database](https://github.com/YiShengLee/Project3-Wine-Database).
+2.	Click on Clone or download then Download ZIP. This will download the code into a ZIP folder locally on your computer.
+3.	Uncompress the ZIP folder.
+4.	Copy all the file and load it into Visual Studio Code.
+    - Download Link:[Visual Studio Code](https://code.visualstudio.com/)
+
 
 
 
