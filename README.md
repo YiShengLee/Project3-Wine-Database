@@ -111,6 +111,27 @@ In the future, I would like to:
 - A table to display which user contribute the most
 - A button to add more wine categories
 
+## Testing <a name="testing"></a>
+This site is tested to be responsive on the following devices:
+- iphone 6/7/8
+- ipad
+    - Safari
+- Samsung Galaxy 8
+    - Google Chrome
+    - Samsung web browser
+- Ubuntu 18.0
+    - Google Chrome
+- Window 10
+    - Google Chrome
+    - Firefox
+    - Microsoft Edge
+    - Internet Explorer 11
+- Window 7
+    - Google Chrome
+    - Internet Explorer 11
+
+
+
 
 
 
