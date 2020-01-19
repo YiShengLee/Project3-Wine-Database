@@ -289,6 +289,7 @@ a{
 /*Display Image Size*/
 .imgHolder{
     height:350px;
+    text-align: center;
 }
 
 .wine_img{

@@ -66,5 +66,58 @@ The website has been designed to be display nicely on all form of devices (TV, l
 - Added counter for total number of wine information display in the website
 - Clickable button to redirect to the desire page of the website
 
+### TV and Desktop Version
+- Wine information will be display in 4 data in one row
+- Form layout will be 1140px
+
+### Tablet Version
+- Wine information will be display in 2 data in one row
+- Form layout will be 720px
+
+### Mobile Version
+- Wine information will be display in 1 data in one row
+- Form layout will be 85% of view width
+- Font size will be roughly 20 - 30% smaller
+- Image and icon will be reduce and display correctly
+
+## Technologies Used <a name="technology"></a>
+Below are a list of the programming languages, technologies and frameworks used for this website.
+- [Heroku](https://www.heroku.com/home)
+    - To deploy, manage, and scale modern apps 
+- HTML5
+- CSS3
+- Script
+- Markdown
+    - Used to write the README file
+- [Bootstrap 4.3.1 framework](https://getbootstrap.com/)
+    - The website uses Bootstrap framework for its grid system, button styling, modal, accordion and responsive navbar 
+- Javascript
+    - To do a validation for form input 
+- [AWS Cloud9](https://aws.amazon.com/cloud9/)
+    - A cloud platform to code 
+- [Google Fonts](https://fonts.google.com/)
+    - Input different font styling 
+- [GitHub](https://github.com/)
+    - A Git repository hosting service 
+- [Font Awesome](https://fontawesome.com/)
+    - Create nice icon 
+- [Favicon](https://www.favicon-generator.org/)
+    - Generate website app icon
+- Google Chrome Developer Tools
+
+
+
+
+
+
+
+    - [BioRhyme](https://fonts.google.com/?query=BioRhyme)
+    - [DM Serif Text](https://fonts.google.com/?query=DM+Serif+Text)
+    - [EB Garamond](https://fonts.google.com/?query=EB+Garamond)
+    - [Lobster](https://fonts.google.com/?query=Lobster)
+    - [Permanent Marker](https://fonts.google.com/?query=Permanent+Marker)
+    - [Courgette](https://fonts.google.com/?query=Courgette)
+
+
 
 
